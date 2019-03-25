@@ -5,7 +5,6 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var shortUrlHandler = require('./handlers/shortUrlHandler');
-var cors = require('cors');
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -13,7 +12,6 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true
 });
 
-app.use(cors());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
